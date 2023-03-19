@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  canvas {
+    border: 1px solid black;
+  }
+  
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgb(255, 134, 21),
+                0 0 40px rgba(255, 255, 255, 0.5),
+                0 0 80px rgba(255, 255, 255, 0.5),
+                0 0 160px rgba(255, 255, 255, 0.5);
+    animation: pulse 2s linear infinite;
+  }
+  #score {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px black;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.2);
+      opacity: 0;
+    }
+  }
+.arrow-keys {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -130%);
+}
+
+.arrow {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+}
+
+.up {
+	border-width: 0 10px 10px 10px;
+	border-color: transparent transparent #ffffff transparent;
+	margin-right: 10px;
+}
+
+.left {
+	border-width: 10px 0 10px 10px;
+	border-color: transparent transparent transparent #ffffff;
+	margin-right: 10px;
+}
+
+.down {
+	border-width: 10px 10px 0 10px;
+	border-color: #ffffff transparent transparent transparent;
+	margin-right: 10px;
+}
+
+.right {
+	border-width: 10px 10px 10px 0;
+	border-color: transparent #ffffff transparent transparent;
+}
+
+.active {
+	animation: pulsate 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulsate {
+	from {
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	to {
+		transform: scale(1.2);
+		opacity: 0.7;
+	}
+}
